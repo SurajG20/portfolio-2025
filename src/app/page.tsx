@@ -1,4 +1,5 @@
 import Header from '@/components/Header/Header'
+import Links from '@/components/Links/Links'
 import Section from '@/components/Section/Section'
 
 const experience = [
@@ -27,10 +28,32 @@ const experience = [
 ]
 const projects = [
   {
-    title: 'Crypto Trader',
-    url: 'https://cryptotrader.com',
-    subtitle: 'Cryptocurrency trading platform',
-    description: `Developed a blockchain-based trading platform that enables users to trade cryptocurrencies securely. Implemented real-time price tracking, order matching, and user authentication using blockchain technology. Optimized performance and scalability to handle high traffic.`,
+    title: 'Urban Garage',
+    url: 'https://urbangarage.com',
+    subtitle: 'Full-stack automotive marketplace',
+    description:
+      'Built with the MERN stack featuring an intuitive admin dashboard, Redux state management, and real-time inventory updates. Includes user authentication, vehicle listings, and booking management.',
+  },
+  {
+    title: 'Bazaar',
+    url: 'https://bazaar.com',
+    subtitle: 'Modern e-commerce platform',
+    description:
+      'Built with React, Node.js and MongoDB. Features include secure JWT authentication, Stripe payment integration, shopping cart functionality, order management, and cloud-based image storage with Firebase.',
+  },
+  {
+    title: 'Expense Tracker',
+    url: 'https://expensetracker.com',
+    subtitle: 'React-based personal finance application',
+    description:
+      'With MongoDB backend for tracking income and expenses. Features include interactive charts, budget categories, transaction history, and data visualization to help users manage their finances effectively.',
+  },
+  {
+    title: 'Cinemato',
+    url: 'https://cinemato.com',
+    subtitle: 'Modern movie discovery platform',
+    description:
+      'Built with React that integrates with the TMDB API. Features include advanced search functionality, movie/TV show details, ratings, reviews, and responsive design for optimal viewing across devices.',
   },
 ]
 export default function Home() {
@@ -39,6 +62,7 @@ export default function Home() {
       <Header />
       <Section title="experience" content={experience} />
       <Section title="projects" content={projects} />
+      <Links />
     </main>
   )
 }

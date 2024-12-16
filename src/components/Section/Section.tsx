@@ -1,3 +1,5 @@
+import { Dot } from 'lucide-react'
+
 type Experience = {
   title: string
   url: string
@@ -13,7 +15,7 @@ type SectionProps = {
 export default function Section({ title, content }: SectionProps) {
   return (
     <div>
-      <h2 className="text-white font-bold text-4xl mb-6">
+      <h2 className="text-white font-bold text-3xl mb-6">
         <span className="mr-0.5 text-accent">~</span>
         {title}
       </h2>
@@ -22,7 +24,13 @@ export default function Section({ title, content }: SectionProps) {
           content.map((item, index) => (
             <div key={index} className="space-y-2.5">
               <h3 className="text-white font-semibold text-xl tracking-tighter hover:text-accent cursor-pointer">
-                <a href={item.url}> {item.title}</a>
+                <a
+                  href={item.url}
+                  className="inline-flex items-center gap-x-0.5"
+                >
+                  {' '}
+                  <Dot /> {item.title}
+                </a>
               </h3>
               <h4 className="text-sm text-gray-400">{item.subtitle}</h4>
               <p className="text-gray-300 tracking-wide">{item.description}</p>
