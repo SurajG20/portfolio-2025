@@ -1,4 +1,5 @@
-import { Dot } from 'lucide-react'
+import { Dot, MoveUpRight } from 'lucide-react'
+import Link from 'next/link'
 
 type Experience = {
   title: string
@@ -10,9 +11,10 @@ type Experience = {
 type SectionProps = {
   title: string
   content: Experience[]
+  action?: string
 }
 
-export default function Section({ title, content }: SectionProps) {
+export default function Section({ title, content, action }: SectionProps) {
   return (
     <div>
       <h2 className="text-white font-bold text-3xl mb-6">
@@ -36,6 +38,15 @@ export default function Section({ title, content }: SectionProps) {
               <p className="text-gray-300 tracking-wide">{item.description}</p>
             </div>
           ))}
+        {action && (
+          <Link
+            href={`/${action}`}
+            className=" font-medium inline-flex items-center gap-x-1 cursor-pointer hover:text-accent"
+          >
+            all {action}
+            <MoveUpRight size={18} />
+          </Link>
+        )}
       </div>
     </div>
   )
